@@ -1,1 +1,0 @@
-https://www.mongodb.com/docs/v6.0/core/views/

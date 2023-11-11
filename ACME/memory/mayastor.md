@@ -1,3 +1,0 @@
-https://mayastor.gitbook.io/introduction/quickstart/configure-mayastor#create-mayastor-pool-s
-What is a Mayastor Pool?
-When a Mayastor node allocates storage capacity for a replica of a Persistent Volume it does so from a Mayastor Pool. Each Mayastor node may create and manage zero, one, or more such pools. The ownership of a pool by a node is exclusive. A pool can manage only one block device, which constitutes the entire data persistence layer for that pool and thus defines its maximum storage capacity.

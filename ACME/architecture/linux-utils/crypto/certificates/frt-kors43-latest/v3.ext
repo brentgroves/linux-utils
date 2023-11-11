@@ -1,8 +1,0 @@
-authorityKeyIdentifier=keyid,issuer
-basicConstraints=CA:FALSE
-keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
-subjectAltName = @alt_names
-    
-[alt_names]
-DNS.0 = frt-kors43.busche-cnc.com
-DNS.1 = 172.20.0.41

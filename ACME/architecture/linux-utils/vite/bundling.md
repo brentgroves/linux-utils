@@ -1,3 +1,0 @@
-https://nextjs.org/learn/foundations/how-nextjs-works/bundling
-Bundling is the process of resolving the web of dependencies and merging (or ‘packaging’) the files (or modules) into optimized bundles for the browser, with the goal of reducing the number of requests for files when a user visits a web page.
-Crawling is gathering your dependencies from outside resources. Bundling is merging your dependencies into a single optimized file.

@@ -1,1 +1,0 @@
-**[OpenID Connect debugger](https://oidcdebugger.com/)**

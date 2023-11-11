@@ -1,1 +1,0 @@
-https://bootcamp.laravel.com/blade/installation#installation-via-docker

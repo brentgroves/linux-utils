@@ -1,1 +1,0 @@
-https://laravel.com/docs/10.x/starter-kits#breeze-and-inertias

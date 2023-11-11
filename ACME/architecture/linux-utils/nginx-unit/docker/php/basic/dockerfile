@@ -1,6 +1,0 @@
-# <!-- http://unit.nginx.org/howto/docker/ -->
-FROM unit:1.30.0-php8.2
-# port used by the listener in config.json
-EXPOSE 8080
-COPY run-unit-php.md /delme/run-unit-php.md
-

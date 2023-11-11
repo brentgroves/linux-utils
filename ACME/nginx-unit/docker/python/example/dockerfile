@@ -1,4 +1,0 @@
-# <!-- http://unit.nginx.org/howto/docker/ -->
-FROM unit:1.30.0-python3.11
-COPY requirements.txt /config/requirements.txt
-RUN python3 -m pip install -r /config/requirements.txt

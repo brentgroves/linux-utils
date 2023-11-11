@@ -1,1 +1,0 @@
-gpg --full-generate-key

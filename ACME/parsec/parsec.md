@@ -1,1 +1,0 @@
-Same category of software as RDP. It specialized in smooth rendering of graphics.

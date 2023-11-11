@@ -1,8 +1,0 @@
-Collecting pyopenssl
-  Downloading pyOpenSSL-23.0.0-py3-none-any.whl (57 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.3/57.3 kB 525.9 kB/s eta 0:00:00
-Requirement already satisfied: cryptography<40,>=38.0.0 in /home/brent/anaconda3/envs/crypto/lib/python3.11/site-packages (from pyopenssl) (39.0.1)
-Requirement already satisfied: cffi>=1.12 in /home/brent/anaconda3/envs/crypto/lib/python3.11/site-packages (from cryptography<40,>=38.0.0->pyopenssl) (1.15.1)
-Requirement already satisfied: pycparser in /home/brent/anaconda3/envs/crypto/lib/python3.11/site-packages (from cffi>=1.12->cryptography<40,>=38.0.0->pyopenssl) (2.21)
-Installing collected packages: pyopenssl
-Successfully installed pyopenssl-23.0.0

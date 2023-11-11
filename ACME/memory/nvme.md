@@ -1,2 +1,0 @@
-
-NVMe over Fabric is an architecture to access NVMe storage over different networking fabrics, for example RDMA, TCP or NVMe over Fibre Channel (FC-NVMe). The role of NVMe over Fabric is similar to iSCSI. To increase the fault-tolerance, NVMe over Fabric has a built-in support for multipathing.

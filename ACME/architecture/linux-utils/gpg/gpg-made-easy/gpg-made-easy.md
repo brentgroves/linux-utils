@@ -1,1 +1,0 @@
-https://www.gnupg.org/documentation/manuals/gpgme/index.html#SEC_Contents

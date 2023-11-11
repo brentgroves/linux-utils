@@ -1,1 +1,0 @@
-scc.sh reports5.yaml cfssl

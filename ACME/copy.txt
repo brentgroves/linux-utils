@@ -1,1 +1,0 @@
-microk8s join 10.1.0.120:25000/c9259bc857b4b0c96f83afec095fc899/026b21bcfafe

@@ -1,3 +1,0 @@
-https://www.algosolutions.com/solutions/compatibility/sonus/
-Sonus SBC Compatibility
-Algo IP Endpoints have been tested for compatibility with Sonus SBC VoIP systems. Algo’s Sonus SBC compatible solutions are 3rd party SIP compliant endpoints for voice paging and public address (PA), loud ringing, visual alerting, and secure door entry. Algo IP endpoints are feature-rich PoE/PoE+ powered devices, supporting secure SIP (TLS and SRTP), RTP multicast, and remote network management.  For configuration guides and notes please see the file library below.

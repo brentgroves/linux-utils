@@ -1,1 +1,0 @@
-https://www.gnupg.org/documentation/manuals/gpgme/UI-Server-Protocol.html#UI-Server-Protocol

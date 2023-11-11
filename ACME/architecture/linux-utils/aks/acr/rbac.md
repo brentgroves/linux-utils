@@ -1,1 +1,0 @@
-https://learn.microsoft.com/en-us/azure/container-registry/container-registry-roles?tabs=azure-cli

@@ -1,1 +1,0 @@
-https://httpd.apache.org/docs/2.4/ssl/ssl_intro.html
