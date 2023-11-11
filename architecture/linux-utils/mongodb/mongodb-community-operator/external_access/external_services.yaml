@@ -1,0 +1,54 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: external-mongo-service-0
+  annotations:
+    kube-linter.io/ignore-all: "used for sample"
+spec:
+  type: NodePort
+  selector:
+    app: reports-mongodb-svc
+    statefulset.kubernetes.io/pod-name: reports-mongodb-0
+  ports:
+    - protocol: TCP
+      nodePort: 30351
+      port: 30351
+      targetPort: 27017
+
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: external-mongo-service-1
+  annotations:
+    kube-linter.io/ignore-all: "used for sample"
+spec:
+  type: NodePort
+  selector:
+    app: reports-mongodb-svc
+    statefulset.kubernetes.io/pod-name: reports-mongodb-1
+  ports:  
+    - nodePort: 30352
+      port: 30352
+      targetPort: 27017
+
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: external-mongo-service-2
+  annotations:
+    kube-linter.io/ignore-all: "used for sample"
+spec:
+  type: NodePort
+  selector:
+    app: reports-mongodb-svc
+    statefulset.kubernetes.io/pod-name: reports-mongodb-2
+  ports:  
+    - nodePort: 30353
+      port: 30353
+      targetPort: 27017
+

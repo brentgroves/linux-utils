@@ -1,0 +1,24 @@
+FROM ubuntu:bionic
+# https://github.com/itzg/docker-openssl-ubuntu/blob/master/Dockerfile
+WORKDIR /home/mongobi
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+      openssl libgssapi-krb5-2 \
+    && apt-get clean
+# apt-get install rsyslog && service rsyslog start
+COPY ./install/bin/mongo* ./bin/
+COPY ./install/mongosqld.conf /home/mongobi/ 
+
+# RUN apt-get install -y libssl1.0.0 libssl-dev libgssapi-krb5-2 wget
+# RUN wget https://info-mongodb-com.s3.amazonaws.com/mongodb-bi/v2/mongodb-bi-linux-x86_64-ubuntu1804-v2.13.1.tgz
+# RUN tar -xvzf mongodb-bi-linux-x86_64-ubuntu1804-v2.13.1.tgz
+# WORKDIR /home/mongobi/mongodb-bi-linux-x86_64-ubuntu1804-v2.13.1
+RUN mkdir /logs
+RUN ls
+RUN echo $PATH
+RUN install -m755 bin/mongo* /usr/local/bin/
+EXPOSE 3307
+# CMD ["tail","-f","/dev/null"]
+
+CMD ["mongosqld", "--config=/home/mongobi/mongosqld.conf"]
+# dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb

@@ -1,0 +1,14 @@
+---
+- name: test
+  hosts: localhost
+  remote_user: brent
+
+  tasks:
+  - name: 'Ensure an old job is no longer present. Removes any job that is prefixed by "#Ansible: an old job" from the crontab'
+    ansible.builtin.cron:
+      name: "add-test-1"
+      state: absent
+
+
+
+      

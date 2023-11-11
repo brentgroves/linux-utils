@@ -1,0 +1,13 @@
+hosts: all
+tasks:
+  - name: "example report cronjob"
+    ansible.builtin.cron
+      name: "test report"
+      state: present
+      minute: "10"
+      hour: "7"
+      day: "*"
+      month: "*"
+      weekday: "*"
+      job: 'curl "http://alb-ubu/reports"'
+      

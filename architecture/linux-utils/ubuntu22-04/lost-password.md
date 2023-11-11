@@ -1,0 +1,1 @@
+https://itsfoss.com/how-to-hack-ubuntu-password/

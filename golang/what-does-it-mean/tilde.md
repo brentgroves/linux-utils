@@ -1,0 +1,1 @@
+The special tilde (“~”) symbol instructs Go that T should approximately match one of these types rather than precisely. That is, it should match one of these types or a derived-type extending these. Without the tilde this function will receive only the exact types declared in the constraints and no derived-types

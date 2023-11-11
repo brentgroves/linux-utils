@@ -1,0 +1,10 @@
+https://gist.github.com/rjhansen/67ab921ffb4084c865b3618d6955275f#how-keyservers-work
+
+How Keyservers Work
+When Phil Zimmermann first developed PGP ("Pretty Good Privacy") in the early 1990s there was a clear chicken and egg problem. Public key cryptography could revolutionize communications but required individuals possess each other's public keys. Over time terminology has shifted: now public key cryptography is mostly called "asymmetric cryptography" and public keys are more often called "public certificates", but the chicken-and-egg problem remains. To communicate privately, each party must have a small piece of public data with which to bootstrap a private communication channel.
+
+Special software was written to facilitate the discovery and distribution of public certificates. Called "keyserver software", it can be thought of as analogous to a telephone directory. Users can search the keyserver by a variety of different criteria to discover public certificates which claim to belong to the desired user. The keyserver network does not attest to the accuracy of the information, however: that's left for each user to ascertain according to their own criteria.
+
+Once a user has verified a certificate really and truly belongs to the person in question, they can affix an affidavit to the certificate attesting that they have reason to believe the certificate really belongs to the user in question.
+
+For instance: John Hawley (john@example.org) and I (rjh@example.org) are good friends in real life. We have sat down face-to-face and confirmed certificates. I know with complete certainty a specific public certificate belongs to him; he knows with complete certainty a different one belongs to me. John also knows H. Peter Anvin (hpa@example.org) and has done the same with him. If I need to communicate privately with Peter, I can look him up in the keyserver. Whichever certificate bears an attestation by John, I can trust really belongs to Peter.

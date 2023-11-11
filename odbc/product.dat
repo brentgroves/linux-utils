@@ -1,0 +1,94 @@
+[Operating Systems]
+AIX5=
+HPUX11=
+HPUX11ia64=
+Solaris=
+Solarisx86=
+Linux=
+
+[AIX5]
+ODBC Client for AIX5=
+
+[Solaris]
+ODBC Client for Solaris=
+
+[Solarisx86]
+ODBC Client for Solaris x86=
+
+[HPUX11]
+ODBC Client for HPUX11=
+
+[HPUX11ia64]
+ODBC Client for HPUX11ia64=
+
+[Linux]
+ODBC Client for Linux=
+
+[ODBC Client for AIX5]
+ProductFile__=etc/tar/ivoaAIX.tar
+ProductFile32=etc/tar/ivoaAIX32.tar
+ProductFile64=etc/tar/ivoaAIX64.tar
+DriverFile=ivoa27.so
+DriverDescr=DataDirect OpenAccess SDK 8.1
+DriverTrace=ivtrc27.so
+DriverTrace64=ddtrc27.so
+DefaultDir=/usr/oaodbc81
+SizeReq=80000
+
+[ODBC Client for Solaris]
+ProductFile__=etc/tar/ivoaSunOS.tar
+ProductFile32=etc/tar/ivoaSunOS32.tar
+ProductFile64=etc/tar/ivoaSunOS64.tar
+DriverDescr=DataDirect OpenAccess SDK 8.1
+DriverFile=ivoa27.so
+DriverTrace=ivtrc27.so
+DriverTrace64=ddtrc27.so
+DefaultDir=/usr/oaodbc81
+SizeReq=80000
+
+[ODBC Client for Solaris x86]
+ProductFile__=etc/tar/ivoaSunOSx86.tar
+ProductFile32=etc/tar/ivoaSunOSx8632.tar
+ProductFile64=etc/tar/ivoaSunOSx8664.tar
+DriverDescr=DataDirect OpenAccess SDK 8.1
+DriverFile=ivoa27.so
+DriverTrace=ivtrc27.so
+DriverTrace64=ddtrc27.so
+DefaultDir=/usr/oaodbc81
+SizeReq=80000
+
+[ODBC Client for HPUX11]
+ProductFile__=etc/tar/ivoaHP-UX.tar
+ProductFile32=etc/tar/ivoaHP-UX32.tar
+ProductFile64=etc/tar/ivoaHP-UX64.tar
+DriverDescr=DataDirect OpenAccess SDK 8.1
+DriverFile=ivoa27.sl
+DriverTrace=ivtrc27.sl
+DriverTrace64=ddtrc27.sl
+DefaultDir=/usr/oaodbc81
+SizeReq=52000
+
+[ODBC Client for HPUX11ia64]
+ProductFile__=etc/tar/ivoaHP-UX.tar
+ProductFile32=etc/tar/ivoaHP-UX32.tar
+ProductFile64=etc/tar/ivoaHP-UX64.tar
+DriverDescr=DataDirect OpenAccess SDK 8.1
+DriverFile=ivoa27.so
+DriverTrace=ivtrc27.so
+DriverTrace64=ddtrc27.so
+DefaultDir=/usr/oaodbc81
+SizeReq=64000
+
+[ODBC Client for Linux]
+ProductFile__=etc/tar/ivoaLinux.tar
+ProductFile32=etc/tar/ivoaLinux32.tar
+ProductFile64=etc/tar/ivoaLinux64.tar
+DriverDescr=DataDirect OpenAccess SDK 8.1
+DriverFile=ivoa27.so
+DriverTrace=ivtrc27.so
+DriverTrace64=ddtrc27.so
+DefaultDir=/usr/oaodbc81
+SizeReq=52000
+
+[End]
+

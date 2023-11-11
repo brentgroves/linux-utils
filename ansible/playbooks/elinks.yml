@@ -1,0 +1,11 @@
+---
+- name: Update db servers
+  hosts: reports3
+  remote_user: brent
+
+  tasks:
+  - name: Ensure elinks is at the latest version
+    ansible.builtin.apt:
+      name: elinks
+      state: latest
+# https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html

@@ -1,0 +1,6 @@
+Main-Class: mobex.jdbc.JdbcMain
+Class-Path: mssql-jdbc-11.2.0.jre11.jar jtds-1.3.1.jar mysql-connector-j-8.0.31.jar
+
+
+
+

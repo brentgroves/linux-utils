@@ -1,0 +1,1 @@
+https://portal.nutanix.com/page/documents/details?targetId=Web-Console-Guide-Prism-v5_20:wc-volume-group-configure-c.html

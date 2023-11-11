@@ -1,0 +1,1 @@
+https://mayastor.gitbook.io/introduction/quickstart/prerequisites

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GET CLIENT IP</title>
+    </head>
+    <body>
+        <div id="res"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $.get("https://ipinfo.io", function(response){
+                $("#res").html(response.ip);
+            },"json")
+        </script>
+</body>
+</html>

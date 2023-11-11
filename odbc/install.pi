@@ -1,0 +1,18 @@
+[Usage]
+usage: ksh unixpi.ksh
+
+[Startup]
+DataDirect Product Setup is preparing for installation...
+
+[Platform Support]
+PLATFORMSUPPORT = LINUX
+[Files]
+log=/tmp/pilogfile.
+msg=etc/lang/msg.dat
+dat=product.dat
+
+[OpenAccess SDK ClientVersion]
+slkversion=6_00_00
+
+[End]
+

@@ -1,0 +1,57 @@
+# start a container and watch tail /var/log/cron.log
+# as it populates.
+docker run --name cron-test -d brentgroves/cron-test:7
+
+
+# start a container in the background
+docker run --name cron-test -d brentgroves/cron-test:7
+
+Next, execute a command on the container.
+docker exec -d cron-test touch /tmp/execWorks
+
+# send_email_docker
+docker run --name send-email-docker --rm -i -t brentgroves/cron-test:7 /bin/bash
+
+docker run --name cron-test -it brentgroves/cron-test:7
+
+Test on K8s
+# create pod
+kubectl apply -f py-etl-host-network-pod.yaml
+# shell to pod
+kubectl exec --stdin --tty py-etl-host-network-pod -- /bin/bash
+
+https://gist.github.com/movd/7a9e3db63d076f85d16c7dcde62fe401
+mobexglobal-com.mail.protection.outlook.com
+https://marlam.de/msmtp/
+http://manpages.ubuntu.com/manpages/bionic/en/man1/msmtp.1.html
+
+Check that default account is pointing to mobexglobal smtp server. 
+vim /etc/msmtprc
+
+Make sure alias root has been added and the mail transfer agent points to msmtp
+vim /etc/mail.rc
+set mta=/usr/bin/msmtp
+alias root root<bgroves@buschegroup.com>
+
+
+
+Set these aliases.
+# Send root to Jane
+root: bgroves@buschegroup.com
+   
+# Send everything else to admin
+default: bgroves@buschegroup.com
+vim /etc/aliases
+
+can we see the mobex mail server?
+dig mobexglobal-com.mail.protection.outlook.com
+can we send an email?
+echo "Testing msmtp from ${HOSTNAME} with mail command" | mail -s "test mail 2 from py-etl-training pod" bgroves@buschegroup.com
+
+
+send email from python script
+python send_email.py
+
+Test web service etl script 
+python ws_to_cm_test.py
+python ws_to_dw_test.py

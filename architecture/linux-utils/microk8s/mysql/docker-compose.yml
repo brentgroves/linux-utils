@@ -1,0 +1,13 @@
+version: '3'
+services:
+  # https://github.com/brentgroves/docker13319/blob/main/docker-compose.yml
+  # https://stackoverflow.com/questions/49959601/configure-time-zone-to-mysql-docker-container
+  mysqldb:
+      image: brentgroves/mysql:8.0
+      build: .
+      #container_name: mysql_container
+      ports:
+        - "3306:3306"
+      environment:
+        - MYSQL_ROOT_PASSWORD=password
+        - TZ=America/Fort_Wayne

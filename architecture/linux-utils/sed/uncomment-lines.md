@@ -1,0 +1,1 @@
+sed '/pattern/s/^#//' -i file

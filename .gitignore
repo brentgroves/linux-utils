@@ -1,0 +1,4 @@
+__pycache__/
+nginx-unit/docker/python/example/state/
+__pycache__/
+**/state

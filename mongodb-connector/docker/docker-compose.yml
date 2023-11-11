@@ -1,0 +1,14 @@
+version: "3"
+services:
+  # ... MORE SERVICES ...
+  mongo-bi:
+    image: brent/mongobi
+    restart: always
+    # volumes:
+      #- "✅{{YourSchemaPath}}✅:/home/mongobi/schema.drdl" #Uncomment if you have an schema file
+      # - "/etc/mongosqld.conf:/home/mongobi/mongosqld.conf"
+      # - "/home/brent/logs:/logs"
+    container_name: "mongo-bi"
+    hostname: "mongo-bi"
+    ports:
+      - "3307:3307"
