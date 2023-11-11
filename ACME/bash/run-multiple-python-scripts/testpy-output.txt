@@ -1,0 +1,23 @@
+Name of the script      : sys.argv[0]='./python_file.py'
+Arguments of the script : sys.argv[1:]=['argument1', 'argument2', 'argument3']
+hello from python file.
+Name of the script      : sys.argv[0]='./python_file.py'
+Arguments of the script : sys.argv[1:]=['argument1', 'argument2', 'argument3']
+hello from python file.
+Name of the script      : sys.argv[0]='./python_file.py'
+Arguments of the script : sys.argv[1:]=['argument1', 'argument2', 'argument3']
+hello from python file.
+Name of the script      : sys.argv[0]='./python_file.py'
+Arguments of the script : sys.argv[1:]=['argument1', 'argument2', 'argument3']
+hello from python file.
+Name of the script      : sys.argv[0]='./exit-num.py'
+Arguments of the script : sys.argv[1:]=['argument1', 'argument2', 'argument3']
+<class 'str'>
+Name of the script      : sys.argv[0]='./exit-num.py'
+Arguments of the script : sys.argv[1:]=['10']
+<class 'str'>
+<class 'int'>
+Name of the script      : sys.argv[0]='./exit-num.py'
+Arguments of the script : sys.argv[1:]=['10']
+<class 'str'>
+<class 'int'>

@@ -1,0 +1,2 @@
+exit-num.py argument1 argument2 argument3 >> testpy-output.txt && echo "completed with python_file.py" 
+# python_file.py argument1 argument2 argument3 >> testpy-output.txt && echo "completed with python_file.py" 

@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: golang-hello-world-web-service3
+  #namespace: default
+  annotations:
+    # https://github.com/ubuntu/microk8s/issues/2035
+    kubernetes.io/ingress.class: third 
+    nginx.ingress.kubernetes.io/ssl-redirect: "false" 
+spec:
+  tls:
+  - hosts: 
+    - reports03
+    # secret must be in same namespace
+    secretName: tls-third-credential
+  rules:
+  - host: reports03
+    http:
+      paths:
+      - pathType: Prefix #Exact
+        path: "/myhello3/"
+        backend:
+          service:
+            name: golang-hello-world-web-service3
+            port:
+              number: 8080
+

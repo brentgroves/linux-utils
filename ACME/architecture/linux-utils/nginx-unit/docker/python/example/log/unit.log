@@ -1,0 +1,26 @@
+2023/05/13 18:59:02 [info] 11#11 discovery started
+2023/05/13 18:59:02 [notice] 11#11 module: python 3.11.3 "/usr/lib/unit/modules/python3.unit.so"
+2023/05/13 18:59:02 [info] 10#10 controller started
+2023/05/13 18:59:02 [info] 13#13 router started
+2023/05/13 18:59:02 [notice] 10#10 process 11 exited with code 0
+2023/05/13 18:59:02 [info] 13#13 OpenSSL 1.1.1n  15 Mar 2022, 101010ef
+2023/05/13 18:59:03 [info] 22#22 "webapp" prototype started
+2023/05/13 18:59:03 [info] 23#23 "webapp" application started
+2023/05/13 18:59:04 [notice] 10#10 process 12 exited with code 0
+2023/05/13 18:59:04 [notice] 10#10 process 13 exited with code 0
+2023/05/13 18:59:04 [notice] 22#22 app process 23 exited with code 0
+2023/05/13 18:59:04 [alert] 22#22 sendmsg(13, -1, -1, 2) failed (32: Broken pipe)
+2023/05/13 18:59:04 [notice] 10#10 process 22 exited with code 0
+2023/05/13 18:59:05 [info] 43#43 discovery started
+2023/05/13 18:59:05 [notice] 43#43 module: python 3.11.3 "/usr/lib/unit/modules/python3.unit.so"
+2023/05/13 18:59:05 [info] 1#1 controller started
+2023/05/13 18:59:05 [notice] 1#1 process 43 exited with code 0
+2023/05/13 18:59:05 [info] 45#45 router started
+2023/05/13 18:59:05 [info] 45#45 OpenSSL 1.1.1n  15 Mar 2022, 101010ef
+2023/05/13 18:59:05 [info] 46#46 "webapp" prototype started
+2023/05/13 18:59:05 [info] 47#47 "webapp" application started
+2023/05/13 20:41:52 [notice] 1#1 process 44 exited with code 0
+2023/05/13 20:41:52 [notice] 1#1 process 45 exited with code 0
+2023/05/13 20:41:52 [notice] 46#46 app process 47 exited with code 0
+2023/05/13 20:41:52 [alert] 46#46 sendmsg(13, -1, -1, 2) failed (32: Broken pipe)
+2023/05/13 20:41:52 [notice] 1#1 process 46 exited with code 0

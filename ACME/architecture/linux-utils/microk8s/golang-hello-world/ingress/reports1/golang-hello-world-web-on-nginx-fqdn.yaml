@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: golang-hello-world-web-service
+  #namespace: default
+  annotations:
+    # https://github.com/ubuntu/microk8s/issues/2035
+    # I believe that since this commit the addon now installs 
+    # 2 ingress classes: public AND nginx. So you have both. 
+    # The one named public is marked as default.
+    kubernetes.io/ingress.class: public # was 'nginx' before microk8s 1.20
+    nginx.ingress.kubernetes.io/ssl-redirect: "false" 
+spec:
+  tls:
+  - hosts: 
+    - reports11.busche-cnc.com
+    # secret must be in same namespace
+    secretName: tls-credential
+  rules:
+  - host: reports11.busche-cnc.com
+    http:
+      paths:
+      - pathType: Prefix #Exact
+        path: "/myhello/"
+        backend:
+          service:
+            name: golang-hello-world-web-service
+            port:
+              number: 8080
+

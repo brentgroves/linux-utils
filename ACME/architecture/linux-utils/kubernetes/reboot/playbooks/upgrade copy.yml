@@ -1,0 +1,46 @@
+# https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html
+# pushd /workspaces/reports/volume/ansible
+# ansible-playbook upgrade.yml -b --extra-vars 'ansible_become_pass=JesusLives1!'
+---
+- name: Update servers
+  hosts: reports12
+  remote_user: brent
+  become: true
+  become_user: brent
+  vars_prompt:
+    - name: passwd
+      prompt: Enter the password
+  tasks:
+  - name: update cache and upgrade apt packages
+    ansible.builtin.apt:
+      upgrade: yes
+      update_cache: yes
+      cache_valid_time: 86400 #One day
+# ---
+# - name: Update db servers
+#   hosts: reports3
+#   remote_user: brent
+
+#   tasks:
+#   - name: Ensure elinks is at the latest version
+#     ansible.builtin.apt:
+#       name: elinks
+#       state: latest
+
+# - name: Update and upgrade apt packages
+#   become: true
+#   apt:
+#     upgrade: yes
+#     update_cache: yes
+#     cache_valid_time: 86400 #One day
+
+# ---
+# - name: Update apt
+#   hosts: reports0
+#   remote_user: brent
+
+#   tasks:
+#   - name: Ensure elinks is at the latest version
+#     ansible.builtin.apt:
+#       name: elinks
+#       state: latest

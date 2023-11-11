@@ -1,0 +1,41 @@
+# conda env create -f env-reports.yml
+# noticed on reports-alb if I conda remove pyodbc
+# 
+name: reports
+channels:
+  - conda-forge
+  - anaconda
+dependencies:
+  - openssl=1.1.1 
+  # many python libraries such as pyodbc may require an older version 
+  # of openssl this may be a problem if you are working with 
+  # TLS/SSL certificate verifications giving you many errors that would
+  # be resolved with new versions of openssl installed.
+  - python=3.9.13 # conda-forge
+  - pandas=1.4.2 # conda-forge
+  - mysql-connector-python=8.0.30 # conda-forge
+  # - mysql-connector-python=8.0.18 # can't install from conda on pyver=3.10 so pip install mysql-connector-python --quiet  
+  - flask=2.1.3
+  - flask-restful=0.3.9
+  - requests=2.28.1
+  - requests_ntlm=1.1.0
+  - pip=22.2.2 #conda-forge
+  - zeep=4.1.0
+  - pyodbc=4.0.32
+  - sqlalchemy=1.4.32
+  - ipykernel=6.9.1
+  - ipython-sql=0.3.9
+  - matplotlib=3.5.2 
+  - python-crontab=2.6.0
+  - marshmallow=3.17.0
+  - peewee=3.15.1
+  - xlsxwriter=3.0.3 # conda-forge
+  - python-dotenv=0.8.2 # conda-forge
+  - jaydebeapi=1.2.3
+  - pymongo=3.12.0 # anaconda
+  - gunicorn=21.2.0 # conda-forge
+  # conda install -c conda-forge gunicorn
+  # conda install -c conda-forge python-dotenv=0.8.2
+  # conda install -c conda-forge jaydebeapi=1.2.3
+  # conda install -c anaconda pymongo=3.12.0
+  # conda install -c anaconda openssl=1.1.1s

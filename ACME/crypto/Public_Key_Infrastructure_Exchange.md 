@@ -1,0 +1,96 @@
+
+https://www.ibm.com/docs/en/i/7.1?topic=concepts-distinguished-name
+Public Key Infrastructure Exchange (PKIX) standards, may require that the requester verify identity information through a Registration Authority (RA) before issuing the certificate.
+
+https://www.keyfactor.com/resources/what-is-pki/
+
+Public key infrastructure (PKI) governs the issuance of digital certificates to protect sensitive data, provide unique digital identities for users, devices and applications and secure end-to-end communications.
+
+What is PKI?
+Today, organizations rely on PKI to manage security through encryption. Specifically, the most common form of encryption used today involves a public key, which anyone can use to encrypt a message, and a private key (also known as a secret key), which only one person should be able to use to decrypt those messages. These keys can be used by people, devices, and applications. 
+
+PKI security first emerged in the 1990s to help govern encryption keys through the issuance and management of digital certificates. These PKI certificates verify the owner of a private key and the authenticity of that relationship going forward to help maintain security. The certificates are akin to a driver’s license or passport for the digital world. 
+
+Common examples of PKI security today are SSL certificates on websites so that site visitors know they’re sending information to the intended recipient, digital signatures, and authentication for Internet of Things devices.
+
+Cryptographic algorithms are defined, highly complex mathematical formulas used to encrypt and decrypt messages. They are also the building blocks of PKI authentication. These algorithms range in complexity and the earliest ones pre-date modern technology. 
+
+Symmetric Encryption
+Symmetric encryption is a simple cryptographic algorithm by today’s standards, however, it was once considered state of the art. In fact, the German army used it to send private communications during World War II. The movie The Imitation Game actually does quite a good job of explaining how symmetric encryption works and the role it played during the war. 
+
+With symmetric encryption, a message that gets typed in plain text goes through mathematical permutations to become encrypted. The encrypted message is difficult to break because the same plain text letter does not always come out the same in the encrypted message. For example, the message “HHH” would not encrypt to three of the same characters. 
+
+To both encrypt and decrypt the message, you need the same key, hence the name symmetric encryption. While decrypting messages is exceedingly difficult without the key, the fact that the same key must be used to encrypt and decrypt the message carries significant risk. That’s because if the distribution channel used to share the key gets compromised, the whole system for secure messages is broken. 
+
+Asymmetric Encryption
+Asymmetric encryption, or asymmetrical cryptography, solves the exchange problem that plagued symmetric encryption. It does so by creating two different cryptographic keys (hence the name asymmetric encryption) — a private key and a public key. 
+
+With asymmetric encryption, a message still goes through mathematical permutations to become encrypted but requires a private key (which should be known only to the recipient) to decrypt and a public key (which can be shared with anyone) to encrypt a message. 
+
+Here’s how this works in action: 
+
+Alice wants to send a private message to Bob, so she uses Bob’s public key to generate encrypted ciphertext that only Bob’s private key can decrypt. 
+Because only Bob’s private key can decrypt the message, Alice can send it knowing that no one else can read it — not even an eavesdropper — so long as Bob is careful that no one else has his private key.
+
+Asymmetric encryption also makes it possible to take other actions that are harder to do with symmetric encryption, like digital signatures, which work as follows: 
+
+Bob can send a message to Alice and encrypt a signature at the end using his private key. 
+When Alice receives the message, she can use Bob’s public key to verify two things: 
+Bob, or someone with Bob’s private key, sent the message 
+The message was not modified in transit, because if it does get modified the verification will fail
+ 
+
+In both of these examples, Alice has not generated her own key. Just with a public key exchange, Alice can send encrypted messages to Bob and verify documents that Bob has signed. Importantly, these actions are only one-way. To reverse the actions so Bob can send private messages to Alice and verify her signature, Alice would have to generate her own private key and share the corresponding public key. 
+
+Today, there are three popular mathematical properties used to generate private and public keys: RSA, ECC, and Diffie-Hellman. Each uses different algorithms to generate encryption keys but they all rely on the same basic principles as far as the relationship between the public key and private key.  
+
+Let’s look at the RSA 2048 bit algorithm as an example. This algorithm randomly generates two prime numbers that are each 1024 bits long and then multiplies them together. The answer to that equation is the public key, while the two prime numbers that created the answer are the private key.  
+
+Anyone can use the public portion of a certificate to verify that it was actually issued by the CA by confirming who owns the private key used to sign the certificate. And, assuming they deem that CA trustworthy, they can verify that anything they send to the certificate holder will actually go to the intended recipient and that anything signed using that certificate holder’s private key was indeed signed by that person/device. 
+
+One important part of this process to note is that the CA itself has its own private key and corresponding public key, which creates the need for CA hierarchies. 
+
+How CA Hierarchies and Root CAs Create Layers of Trust
+Since each CA has a certificate of its own, layers of trust get created through CA hierarchies — in which CAs issue certificates for other CAs. However, this process is not circular, as there is ultimately a root certificate. Normally, certificates have an issuer and a subject as two separate parties, but these are the same parties for root CAs, meaning that root certificates are self-signed. As a result, people must inherently trust the root certificate authority to trust any certificates that trace back to it. 
+
+Root CA Security is of Utmost Importance
+All of this makes the security of private keys extra important for CAs. A private key falling into the wrong hands is bad in any case, but it’s particularly devastating for CAs, because then someone can issue certificates fraudulently.  
+
+Security controls and the impact of loss become even more severe as you move up the chain in a CA hierarchy because there is no way to revoke a root certificate. Should a root CA become compromised, the organization needs to make that security breach public. As a result, root CAs have the most stringent security measures. 
+
+To meet the highest security standards, root CAs should almost never be online. As a best practice, root CAs should store their private keys in NSA-grade safes within state of the art data centers with 24/7 security via cameras and physical guards. All of these measures might seem extreme, but they’re necessary to protect the authenticity of a root certificate. 
+
+Although a root CA should be offline 99.9% of the time, there are certain instances where it does need to come online. Specifically, root CAs need to come online for the creation of public keys, private keys and new certificates as well as to ensure that its own key material is still legitimate and hasn’t been damaged or compromised in any way. Ideally, root CAs should run these tests about 2-4 times a year. 
+
+Finally, it’s important to note that root certificates do expire. Root certificates typically last for 15-20 years (compared to approximately seven years for certificates from subordinate CAs). Introducing and building trust in a new root isn’t easy, but it’s important that these certificates do expire because the longer they run, the more vulnerable they become to security risks. 
+
+Determining the Optimal Level of Tiers in Your PKI’s CA Hierarchy
+A CA hierarchy typically involves two tiers, following the chain of Root Certificate Authority → Subordinate Certificate Authorities → End-Entity Certificates. 
+
+A two-tier hierarchy is absolutely necessary at a minimum because a root CA should be offline 99.9% of the time, which is a difficult standard for subordinate CAs that regularly issue certificates to meet since they need to be online to issue new certificates.  
+
+While subordinate CAs do the best they can to protect their certificates, they carry a much higher security risk than root CAs. Unlike root CAs though, subordinate CAs do have the ability to revoke certificates, so any security breach that does happen is easier to recover from than it is for root CAs (which can’t revoke certificates). 
+
+That said, a two-tier hierarchy is also usually sufficient for security. That’s because the more tiers that exist within a CA hierarchy, the more difficult usability and scalability of the PKI becomes because more tiers add complexity to the policies and procedures governing the PKI. 
+
+Managing Revocation Through Certificate Revocation Lists
+If a subordinate CA gets compromised in any way or wants to revoke a certificate for any reason, it must publish a revocation list of any issued certificates that should not be trusted. This list is known as a Certificate Revocation List (CRL) and is critical to PKI design. 
+
+While CAs must issue CRLs, it’s up to the discretion of certificate consumers if they check these lists and how they respond if a certificate has been revoked. Once again, this is a prime example of how digital certificates are similar to driver’s licenses since the vetting process typically depends on the need for the certificate (think about the difference between using a recently expired license to buy alcohol vs. to pass a TSA checkpoint). 
+
+In many cases, certificate consumers choose not to check CRLs because doing so slows down the authentication process. Certificate consumers can also choose how far back to go within the CA hierarchy as part of the check, keeping in mind that the further back they go, the longer the process takes. 
+
+Although checking CRLs — and going all the way to the root CA to do so — slows down the authentication process, doing so is becoming more standard as more things go online and rely on digital certificates for security. Consider the case of web browsers. Many web browsers previously didn’t check certificates because it slowed down the browsing experience, but now these checks are commonplace as internet security becomes more important. 
+
+Critically, the CRLs themselves have an expiration date, and if a CRL expires, every certificate issued by the CA becomes invalid. While CAs primarily focus on making sure certificates don’t expire — which is important — it’s also important they make sure CRLs don’t expire because if that happens it can take down the entire PKI. When root CAs do go online, they also check to make sure that CRLs from subordinate CAs have not expired for this reason. 
+
+Trusted Root Certificates
+Today, every device and system that goes online  (e.g. phones, laptops, servers, operating systems) needs to interact with certificates. This widespread interaction with certificates has led to the concept of a trusted root certificate within devices and operating systems. 
+
+For example, all Microsoft computers have a trusted root store. Any certificate that can be traced back to that trusted root store will be automatically trusted by the computer. Each device and operating system comes with a pre-set trusted root store, but machine owners can set rules to trust additional certificates or to not trust certificates that were pre-set as trusted. 
+
+Why is PKI so Important in Today’s Digital Age?
+PKI is so important in today’s digital age because there are now millions of applications and connected devices that require certification. Properly authenticating and maintaining certificates for these technologies is essential to keeping our highly connected world secure. 
+
+To fully illustrate the importance of PKI in today’s digital age, let’s track its evolution since it first came about in the mid-1990s. 
+

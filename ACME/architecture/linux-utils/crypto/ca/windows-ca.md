@@ -1,0 +1,1 @@
+https://virtuallythere.blog/2018/04/24/making-things-a-bit-more-secure-part-1/

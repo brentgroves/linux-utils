@@ -1,0 +1,44 @@
+# https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html
+# pushd /workspaces/reports/volume/ansible
+# ansible-playbook reboot.yml -i inventory.yaml -b --ask-become-pass
+# https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_privilege_escalation.html
+---
+- name: Update servers
+  hosts: moto
+  # hosts: reports3
+  # hosts: reports3
+  remote_user: brent
+  tasks:
+  - name: update cache and upgrade apt packages
+    ansible.builtin.apt:
+      upgrade: yes
+      update_cache: yes
+      cache_valid_time: 86400 #One day
+# ---
+# - name: Update db servers
+#   hosts: reports3
+#   remote_user: brent
+
+#   tasks:
+#   - name: Ensure elinks is at the latest version
+#     ansible.builtin.apt:
+#       name: elinks
+#       state: latest
+
+# - name: Update and upgrade apt packages
+#   become: true
+#   apt:
+#     upgrade: yes
+#     update_cache: yes
+#     cache_valid_time: 86400 #One day
+
+# ---
+# - name: Update apt
+#   hosts: reports0
+#   remote_user: brent
+
+#   tasks:
+#   - name: Ensure elinks is at the latest version
+#     ansible.builtin.apt:
+#       name: elinks
+#       state: latest

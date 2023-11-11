@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    application: spilo
+    cluster-name: acid-minimal-cluster
+    spilo-role: master
+    team: acid
+  name: acid-minimal-cluster-0-np
+  namespace: default
+spec:
+  type: NodePort
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  selector:
+    application: spilo
+    cluster-name: acid-minimal-cluster
+    spilo-role: master
+  ports:
+  - name: acid-minimal-cluster-0-np
+    nodePort: 30451  
+    # A Service definition specifies the port number that the Service will listen on for incoming traffic using the port field. 
+    port: 5432
+    protocol: TCP
+    # pod’s port number that the Service is responsible for routing traffic to
+    targetPort: 5432

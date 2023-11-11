@@ -1,0 +1,1 @@
+https://www.golinuxcloud.com/renew-expired-root-ca-certificate-openssl/

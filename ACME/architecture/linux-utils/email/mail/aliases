@@ -1,0 +1,6 @@
+# Send root to Jane
+root: bgroves@buschegroup.com
+   
+# Send everything else to admin
+default: bgroves@buschegroup.com
+

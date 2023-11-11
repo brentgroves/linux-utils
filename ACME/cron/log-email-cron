@@ -1,0 +1,4 @@
+# must be ended with a new line "LF" (Unix) and not "CRLF" (Windows)
+* * * * * echo "Hello world" >> /var/log/cron.log 2>&1
+* * * * * echo "Testing msmtp from ${HOSTNAME} with mail command" | mail -s "test mail from cron" bgroves@buschegroup.com
+# An empty line is required at the end of this file for a valid cron file.

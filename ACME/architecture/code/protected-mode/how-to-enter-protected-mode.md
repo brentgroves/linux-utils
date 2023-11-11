@@ -1,0 +1,1 @@
+https://en.wikibooks.org/wiki/X86_Assembly/Protected_Mode
